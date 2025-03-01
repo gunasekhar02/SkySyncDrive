@@ -1,42 +1,40 @@
 <mat-card class="Media">
-    <div class="media-manager">
-        <!-- Images Folder -->
-        <div class="folder">
-          <h2>Images</h2>
-          <div class="file-list">
-            <div *ngFor="let image of images" class="file-item">
-              <img [src]="image.filePath" [alt]="image.fileName" class="thumbnail" />
-              <p>{{ image.fileName }}</p>
-            </div>
-          </div>
-        </div>
-      
-        <!-- Audio Folder -->
-        <div class="folder">
-          <h2>Audio</h2>
-          <div class="file-list">
-            <div *ngFor="let audioFile of audio" class="file-item">
-              <audio controls>
-                <source [src]="audioFile.filePath" [type]="audioFile.fileType" />
-                Your browser does not support the audio element.
-              </audio>
-              <p>{{ audioFile.fileName }}</p>
-            </div>
-          </div>
-        </div>
-      
-        <!-- Videos Folder -->
-        <div class="folder">
-          <h2>Videos</h2>
-          <div class="file-list">
-            <div *ngFor="let video of videos" class="file-item">
-              <video controls width="200">
-                <source [src]="video.filePath" [type]="video.fileType" />
-                Your browser does not support the video element.
-              </video>
-              <p>{{ video.fileName }}</p>
-            </div>
-          </div>
-        </div>
+  <div class="media-manager">
+    <mat-card class="folder-card">
+      <!-- Images Folder -->
+      <div class="folder" (click)="navigateToFolder('images-detail')">
+        <h3>Images</h3>
+        <img src="assets/images/images-cover.png" alt="Images Cover" class="cover-image" />
       </div>
+    </mat-card>
+
+    <mat-card class="folder-card">
+      <!-- Audio Folder -->
+      <div class="folder" (click)="navigateToFolder('audios-detail')">
+        <h3>Audio</h3>
+        <img src="assets/images/audio-cover.png" alt="Audio Cover" class="cover-image" />
+      </div>
+    </mat-card>
+
+
+
+    <mat-card class="folder-card">
+      <!-- Videos Folder -->
+      <div class="folder" (click)="navigateToFolder('videos-detail')">
+        <h3>Videos</h3>
+        <img src="assets/images/videos-cover.png" alt="Videos Cover" class="cover-image" />
+      </div>
+    </mat-card>
+
+
+
+    <mat-card class="folder-card">
+      <!-- Pdfs Folder -->
+      <div class="folder" (click)="navigateToFolder('pdfs')">
+        <h3>Pdfs</h3>
+        <img src="assets/images/pdf-cover.png" alt="pdfs Cover" class="cover-image" />
+      </div>
+    </mat-card>
+
+  </div>
 </mat-card>

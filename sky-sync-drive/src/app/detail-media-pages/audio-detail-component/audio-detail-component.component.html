@@ -1,0 +1,12 @@
+<div class="app-container">
+    <mat-card class="audio-detail-card">
+      <div class="audio-container">
+        <div *ngFor="let file of dummyFiles" class="audio-item">
+          <div *ngIf="file.fileType.startsWith('audio')" (click)="openAudioDialog(file)" class="audio-preview">
+            <mat-icon>play_circle_filled</mat-icon>
+            <div class="file-name">{{ file.fileName }}</div>
+          </div>
+        </div>
+      </div>
+    </mat-card>
+  </div>

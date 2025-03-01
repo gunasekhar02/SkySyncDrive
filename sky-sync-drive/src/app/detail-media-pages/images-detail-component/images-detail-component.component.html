@@ -1,0 +1,12 @@
+<div class="app-container">
+    <mat-card class="images-detail-card">
+
+    <div class="image-container">
+        <div *ngFor="let file of dummyFiles" class="image-item">
+          <img *ngIf="file.fileType.startsWith('image')" [src]="file.filePath" alt="{{ file.fileName }}" (click)="openImageDialog()"class="image-preview">
+          <div class="file-name">{{ file.fileName }}</div>
+        </div>
+      </div>
+    </mat-card>
+</div>
+

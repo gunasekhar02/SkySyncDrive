@@ -1,0 +1,12 @@
+<div class="app-container">
+    <mat-card class="video-detail-card">
+      <div class="video-container">
+        <div *ngFor="let file of dummyFiles" class="video-item">
+          <div *ngIf="file.fileType.startsWith('video')" (click)="openVideoDialog(file)" class="video-preview">
+            <mat-icon>play_circle_filled</mat-icon>
+            <div class="file-name">{{ file.fileName }}</div>
+          </div>
+        </div>
+      </div>
+    </mat-card>
+  </div>
