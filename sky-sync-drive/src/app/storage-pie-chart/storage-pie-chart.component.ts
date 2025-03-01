@@ -4,10 +4,11 @@ import { CommonModule } from '@angular/common';
 import { ChartOptions, ChartType } from 'chart.js';
 import { MatCardModule } from '@angular/material/card';
 // Import necessary Chart.js components
-import { Chart, PieController, ArcElement, Legend, Tooltip } from 'chart.js';
+import { Chart, DoughnutController, ArcElement, Legend, Tooltip } from 'chart.js';
+
 
 // Register the necessary chart elements and plugins
-Chart.register(PieController, ArcElement, Legend, Tooltip);
+Chart.register(DoughnutController, ArcElement, Legend, Tooltip);
 
 @Component({
   selector: 'app-storage-pie-chart',
@@ -45,7 +46,7 @@ export class StoragePieChartComponent {
   };
 
   // Pie chart type
-  public pieChartType: ChartType = 'pie';
+  public pieChartType: ChartType = 'doughnut';
   public pieChartLegend = true;
   public pieChartPlugins = [];
 }

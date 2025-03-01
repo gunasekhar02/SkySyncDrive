@@ -2,6 +2,9 @@ import {ChangeDetectionStrategy, Component, inject} from '@angular/core';
 import {MatDialog, MatDialogModule} from '@angular/material/dialog';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { Router } from '@angular/router';
 interface MediaFile {
   id: number;
   fileName: string;
@@ -12,13 +15,17 @@ interface MediaFile {
 @Component({
   selector: 'app-images-detail-component',
   standalone: true,
-  imports: [MatDialogModule,CommonModule,MatCardModule],
+  imports: [MatDialogModule,CommonModule,MatCardModule,MatButtonModule,MatIconModule],
   templateUrl: './images-detail-component.component.html',
   styleUrl: './images-detail-component.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ImagesDetailComponentComponent {
   dummyFiles: MediaFile[] = [];
+
+  constructor(private router:Router){
+    
+  }
   ngOnInit(): void {
     this.loadDummyData();
   }
@@ -42,6 +49,10 @@ export class ImagesDetailComponentComponent {
       { id: 5, fileName: 'movie.mp4', fileType: 'video/mp4', filePath: 'assets/videos/movie.mp4' },
       { id: 6, fileName: 'clip.avi', fileType: 'video/avi', filePath: 'assets/videos/clip.avi' },
     ];
+  }
+
+  navigateToMedia() {
+    this.router.navigate(['/home/media']);
   }
 }
 

@@ -1,4 +1,7 @@
 <div class="app-container">
+    <div class="back-button">
+        <button mat-button (click)="navigateToMedia()" ><mat-icon>keyboard_backspace</mat-icon>Media-dashboard</button>
+    </div>
     <mat-card class="video-detail-card">
       <div class="video-container">
         <div *ngFor="let file of dummyFiles" class="video-item">

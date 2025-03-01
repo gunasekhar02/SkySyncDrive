@@ -1,26 +1,50 @@
 .media-manager {
   padding: 20px;
-  padding-left: 200px;
+  padding-top: 60px;
+  padding-bottom: 62px;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap; /* Prevent wrapping */
   gap: 20px;
-
+  overflow-x: auto; /* Add horizontal scroll if folders exceed container width */
 }
 
+.folder-card {
+  flex: 0 0 auto; /* Prevent flex-grow and flex-shrink, keep fixed width */
+  padding: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  border-radius: 2px;
+}
+
+
 .folder {
-  flex: 1 1 calc(33.333% - 40px); /* Three folders in a row with some gap */
   border: 1px solid #ccc;
   border-radius: 8px;
+  width: 200px;
   padding: 15px;
   background-color: #f9f9f9;
   cursor: pointer;
   text-align: center;
-  height: 100px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add smooth transitions */
+}
+
+.folder h4 {
+  margin-top: 0;
+  color: #333;
+}
+
+.folder:hover {
+  transform: scale(1.05); /* Slightly scale up the folder */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a stronger shadow on hover */
 }
 
 .folder h3 {
   margin-top: 0;
   color: #333;
+  transition: color 0.3s ease; /* Smooth color transition for text */
+}
+
+.folder:hover h3 {
+  color: #007bff; /* Change text color on hover */
 }
 
 .cover-image {
@@ -28,49 +52,4 @@
   height: 150px;
   object-fit: cover;
   border-radius: 4px;
-}
-
-.file-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.file-item {
-  text-align: center;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 10px;
-  background-color: #fff;
-}
-
-.thumbnail {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 4px;
-}
-
-audio,
-video {
-  width: 200px;
-  margin-bottom: 10px;
-}
-
-.media-card {
-  width: 90% !important;
-  margin-bottom: auto;
-  padding: 30px;
-  margin-left: 50px;
-  margin-top: 40px;
-  margin-bottom: 20px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-  border-radius: 2px;
-}
-
-.folder-card{
-    width: 40%;
-    padding: 15px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-    border-radius: 2px; /* Optional: Add rounded corners */
 }

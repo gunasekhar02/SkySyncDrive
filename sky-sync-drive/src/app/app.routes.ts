@@ -8,6 +8,8 @@ import { StoragePieChartComponent } from './storage-pie-chart/storage-pie-chart.
 import { ImagesDetailComponentComponent } from './detail-media-pages/images-detail-component/images-detail-component.component';
 import { AudioDetailComponentComponent } from './detail-media-pages/audio-detail-component/audio-detail-component.component';
 import { VideoDetailComponentComponent } from './detail-media-pages/video-detail-component/video-detail-component.component';
+import { MediaManagerComponent } from './media-manager/media-manager.component';
+import { FileUploadComponent } from './file-upload/file-upload.component';
 
 export const routes: Routes = [
   {
@@ -24,10 +26,6 @@ export const routes: Routes = [
     component: LoginComponent,
   },
   {
-    path: 'home',
-    component: HomeComponent,
-  },
-  {
     path: 'signup',
     component: SignupComponent,
   },
@@ -39,13 +37,26 @@ export const routes: Routes = [
     path: 'sd',
     component: StoragePieChartComponent,
   },
-  { 
-    path: 'media/images-detail', component: ImagesDetailComponentComponent 
+  {
+    path: 'home/media/images-detail',
+    component: ImagesDetailComponentComponent,
   },
-  { 
-    path: 'media/audios-detail', component: AudioDetailComponentComponent 
+  {
+    path: 'home/media/audios-detail',
+    component: AudioDetailComponentComponent,
   },
-  { 
-    path: 'media/videos-detail', component: VideoDetailComponentComponent 
+  {
+    path: 'home/media/videos-detail',
+    component: VideoDetailComponentComponent,
+  },
+  {
+    path: 'home',
+    component: HomeComponent, // HomeComponent will act as the parent
+    children: [
+      { path: 'storage', component: StoragePieChartComponent },
+      { path: 'media', component: MediaManagerComponent },
+      { path: 'upload-media', component: FileUploadComponent },
+      { path: '', redirectTo: 'storage', pathMatch: 'full' }, // Default child route
+    ],
   }
 ];

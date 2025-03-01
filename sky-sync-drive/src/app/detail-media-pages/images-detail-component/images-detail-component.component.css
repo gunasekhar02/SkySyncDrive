@@ -8,8 +8,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add smooth transitions */
   }
   
+  .image-item:hover {
+    transform: scale(1.05); /* Slightly scale up the folder */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a stronger shadow on hover */
+  }
   .image-preview {
     width: 100px;
     height: 100px;
@@ -24,9 +29,10 @@
 
   .images-detail-card{
     margin-bottom: auto;
-    margin: 30px;
     width: 95%;
     padding: 25px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     border-radius: 2px; /* Optional: Add rounded corners */
   }
+
+

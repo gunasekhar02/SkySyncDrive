@@ -1,14 +1,20 @@
-<div class="app-container">
-    <mat-card class="home-card">
-        <mat-tab-group class="tab-group">
-            <mat-tab label="Storage">
-                <!-- Include the pie chart component -->
-                <app-storage-pie-chart></app-storage-pie-chart>
-              </mat-tab>
-            <mat-tab label="Media"> <app-media-manager></app-media-manager> </mat-tab>
-            <mat-tab label="Upload Media"> <app-file-upload></app-file-upload> </mat-tab>
-          </mat-tab-group>    
-    </mat-card>
-  
-</div>
 
+<div class="app-container">
+  <mat-card class="home-card">
+    <!-- Tab navigation -->
+    <nav mat-tab-nav-bar [tabPanel]="tabPanel">
+      <a mat-tab-link
+         *ngFor="let tab of tabs"
+         [routerLink]="tab.route"
+         routerLinkActive #rla="routerLinkActive"
+         [active]="rla.isActive">
+        {{ tab.label }}
+      </a>
+    </nav>
+
+    <!-- Tab content panel -->
+    <mat-tab-nav-panel #tabPanel>
+      <router-outlet></router-outlet>
+    </mat-tab-nav-panel>
+  </mat-card>
+</div>

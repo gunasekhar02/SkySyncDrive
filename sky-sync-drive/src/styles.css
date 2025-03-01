@@ -10,6 +10,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     padding: 5px 10px;
     text-decoration: none;
     margin: 10px;
+    height: 35px;
     transition: all 0.3s ease-in-out; /* Smooth animation */
 
   }
@@ -30,4 +31,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     background-color: #f5f5f5;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     border-radius: 3px; /* Optional: Add rounded corners */
+  }
+
+  .back-button{
+    margin-bottom: auto;
+    margin-right: auto;
   }
