@@ -1,0 +1,23 @@
+<mat-card class="upload-card">
+
+<div class="file-upload-container">
+    <div
+      ngClass="drop-zone"
+      (drop)="onDrop($event)"
+      (dragover)="onDragOver($event)"
+      (dragleave)="onDragLeave($event)"
+    >
+      <p>Drag and drop files here</p>
+     <input type="file" #fileInput (change)="onFileSelected($event)" multiple hidden />
+     <button mat-raised-button color="primary" (click)="fileInput.click()">Browse Files</button>
+    </div>
+  
+    <div *ngIf="files.length > 0">
+      <h3>Selected Files</h3>
+      <ul>
+        <li *ngFor="let file of files">{{ file.name }}</li>
+      </ul>
+      <button mat-raised-button color="white"  (click)="uploadFiles()">Upload Files</button>
+    </div>
+  </div>
+</mat-card>

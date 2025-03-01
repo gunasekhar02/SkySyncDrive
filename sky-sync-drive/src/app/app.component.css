@@ -1,0 +1,25 @@
+.spacer {
+    flex: 1 1 auto;
+  }
+  
+  .content {
+    padding: 3px;
+  }
+
+  .navButtons{
+    display: flex;
+    justify-content: start; /* Aligns content to the left */
+    align-items: center;
+  }
+
+
+  mat-toolbar {
+    background-color:rgb(48, 30, 59) !important;
+    color: white !important; /* Ensures text is visible */
+  }
+
+  .logo {
+    height: 50px; /* Adjust as needed */
+    margin-left: 10px;
+    border-radius: 5px;
+  }

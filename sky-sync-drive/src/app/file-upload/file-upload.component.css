@@ -1,0 +1,27 @@
+.file-upload-container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .drop-zone {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    margin: 20px 0;
+    cursor: pointer;
+  }
+  
+  .drop-zone.dragover {
+    border-color: #000;
+    background-color: #f0f0f0;
+  }
+
+  .upload-card{
+    width: 90% !important;
+    margin-bottom: auto;
+    padding: 30px;
+    margin-left: 50px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    border-radius: 2px; /* Optional: Add rounded corners */
+}

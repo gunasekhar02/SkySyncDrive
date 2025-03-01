@@ -1,0 +1,32 @@
+
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+  display: none;
+}
+
+.sign-up-info {
+  margin-right: auto;
+  margin-top: 25px;
+}
+
+.login-signin-card {
+    margin-bottom: auto;
+    margin-top: 120px;
+    width: 40%;
+    padding: 25px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    border-radius: 2px; /* Optional: Add rounded corners */
+  }
+
+
+  .navButtons a {
+    background-color: rgb(117, 216, 117);
+  }
+  
+

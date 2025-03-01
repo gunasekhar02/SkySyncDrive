@@ -1,0 +1,29 @@
+.about-content{
+  text-align: center; /* Center text horizontally */
+  max-width: 100%; /* Limit the width for better readability */
+  padding-top: 130px;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+/* Footer styling */
+.footer-content {
+    margin-top: auto; /* Pushes the footer to the bottom */
+    padding: 20px;
+    background-color: #f5f5f5; /* Light gray background */
+    text-align: center;
+    border-top: 1px solid #ddd; /* Add a subtle border */
+  }
+  
+  .footer-content p {
+    margin: 5px 0; /* Spacing between paragraphs */
+  }
+  
+  .footer-content a {
+    color: #007bff; /* Blue link color */
+    text-decoration: none;
+  }
+  
+  .footer-content a:hover {
+    text-decoration: underline; /* Underline on hover */
+  }

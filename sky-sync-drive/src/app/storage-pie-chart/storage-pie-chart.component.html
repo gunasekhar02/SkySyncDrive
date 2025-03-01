@@ -1,0 +1,14 @@
+<mat-card class="storage-card">
+  <div *ngIf="pieChartData" class="pie-chart">
+    <canvas
+      baseChart
+      [options]="pieChartOptions"
+      [type]="pieChartType"
+      [legend]="pieChartLegend"
+      [plugins]="pieChartPlugins"
+      [data]="pieChartData"
+    >
+    </canvas>
+  </div>
+</mat-card>
+

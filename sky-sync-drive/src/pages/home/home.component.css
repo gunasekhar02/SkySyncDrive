@@ -1,0 +1,9 @@
+
+.home-card{
+    width: 98%;
+    margin-bottom: auto;
+    padding: 30px;
+    margin-top: 40px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    border-radius: 2px; /* Optional: Add rounded corners */
+}

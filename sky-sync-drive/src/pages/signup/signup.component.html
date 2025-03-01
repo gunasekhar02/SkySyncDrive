@@ -1,0 +1,30 @@
+<div class="app-container">
+    <mat-card class="login-signin-card">
+
+    <form class="signup-form">
+      
+        <table class="signup-full-width" cellspacing="0"><tr>
+          <td><mat-form-field >
+            <input matInput placeholder="First name">
+          </mat-form-field></td>
+          <td><mat-form-field >
+            <input matInput placeholder="Last name">
+          </mat-form-field></td>
+        </tr></table>
+        <table class="signup-full-width" cellspacing="0"><tr>
+            <mat-form-field>
+                <input matInput placeholder="Enter your email" [formControl]="email" required>
+                <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+              </mat-form-field>
+          </tr>
+          <tr><mat-form-field >
+            <input matInput placeholder="Set the password">
+          </mat-form-field></tr></table>
+
+          <div class="navButtons">
+            <a mat-raised-button  routerLink="/home">Sign In</a>
+        </div>
+          
+      </form>
+    </mat-card>
+</div>

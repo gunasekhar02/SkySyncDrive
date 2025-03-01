@@ -1,0 +1,24 @@
+<div class="app-container">
+    <mat-card class="login-signin-card">
+        <div class="form-container">
+            <mat-form-field>
+              <input matInput placeholder="Enter your email" [formControl]="email" required>
+              <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'">
+                <mat-icon matSuffix (click)="hide = !hide">
+                  {{ hide ? 'visibility_off' : 'visibility' }}
+                </mat-icon>
+            </mat-form-field>
+
+            <div class="navButtons">
+                <a mat-raised-button  routerLink="/home">Log in</a>
+            </div>
+
+            <p class="sign-up-info">If you are not a existing user. Please sign in <a  routerLink="/signup">here</a></p>
+
+          </div>
+    </mat-card>
+</div>

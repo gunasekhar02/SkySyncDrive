@@ -1,0 +1,21 @@
+
+  
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .navButtons a {
+    background-color: rgb(100, 172, 197);
+  }
+  
