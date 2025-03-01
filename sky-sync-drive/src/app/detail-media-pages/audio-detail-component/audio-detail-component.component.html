@@ -1,4 +1,7 @@
 <div class="app-container">
+    <div class="back-button">
+        <button mat-button (click)="navigateToMedia()"><mat-icon>keyboard_backspace</mat-icon>Media-dashboard</button>
+    </div>
     <mat-card class="audio-detail-card">
       <div class="audio-container">
         <div *ngFor="let file of dummyFiles" class="audio-item">

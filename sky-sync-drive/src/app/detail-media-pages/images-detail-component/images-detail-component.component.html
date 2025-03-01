@@ -1,6 +1,9 @@
 <div class="app-container">
-    <mat-card class="images-detail-card">
+    <div class="back-button">
+        <button mat-button (click)="navigateToMedia()"><mat-icon>keyboard_backspace</mat-icon>Media-dashboard</button>
+    </div>
 
+    <mat-card class="images-detail-card">
     <div class="image-container">
         <div *ngFor="let file of dummyFiles" class="image-item">
           <img *ngIf="file.fileType.startsWith('image')" [src]="file.filePath" alt="{{ file.fileName }}" (click)="openImageDialog()"class="image-preview">

@@ -13,12 +13,15 @@ import { MediaManagerComponent } from '../../app/media-manager/media-manager.com
     RouterModule,
     MatTabsModule,
     MatCardModule,
-    StoragePieChartComponent,
     CommonModule,
-    FileUploadComponent,
-    MediaManagerComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
-export class HomeComponent {}
+export class HomeComponent {
+  tabs = [
+    { label: 'Storage', route: 'storage' },
+    { label: 'Media', route: 'media' },
+    { label: 'Upload Media', route: 'upload-media' },
+  ];
+}

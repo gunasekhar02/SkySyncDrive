@@ -7,3 +7,19 @@
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     border-radius: 2px; /* Optional: Add rounded corners */
 }
+
+.app-container {
+    padding: 20px;
+  }
+  
+  .home-card {
+    padding: 20px;
+  }
+  
+  nav.mat-tab-nav-bar {
+    margin-bottom: 20px;
+  }
+  
+  a.mat-tab-link {
+    margin-right: 10px;
+  }

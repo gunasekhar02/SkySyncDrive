@@ -3,7 +3,8 @@ import {MAT_DIALOG_DATA, MatDialog, MatDialogModule} from '@angular/material/dia
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
-
+import { MatButtonModule } from '@angular/material/button';
+import { Router } from '@angular/router';
 
 
 interface MediaFile {
@@ -17,13 +18,13 @@ interface MediaFile {
   selector: 'app-video-detail-component',
   templateUrl: './video-detail-component.component.html',
   styleUrls: ['./video-detail-component.component.css'],
-  imports: [CommonModule, MatCardModule, MatIconModule,MatDialogModule],
+  imports: [CommonModule, MatCardModule, MatIconModule,MatDialogModule,MatButtonModule],
   standalone:true
 })
 export class VideoDetailComponentComponent implements OnInit {
   dummyFiles: MediaFile[] = [];
 
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog,private router:Router) {}
 
   ngOnInit(): void {
     this.loadDummyData();
@@ -45,6 +46,10 @@ export class VideoDetailComponentComponent implements OnInit {
           console.log(`Dialog result: ${result}`);
         });
 
+  }
+  
+  navigateToMedia() {
+    this.router.navigate(['/home/media']);
   }
 }
 

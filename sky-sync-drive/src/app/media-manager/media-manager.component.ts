@@ -30,6 +30,6 @@ export class MediaManagerComponent {  images: MediaFile[] = [];
   ngOnInit(): void {
   }
   navigateToFolder(folderType: string) {
-    this.router.navigate([`/media/${folderType}`]);
+    this.router.navigate([`home/media/${folderType}`]);
   }
 }
