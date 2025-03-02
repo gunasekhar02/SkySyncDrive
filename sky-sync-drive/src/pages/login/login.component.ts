@@ -90,21 +90,7 @@ export class LoginComponent {
     );
   }
 
-  getErrorMessage() {
-    if (this.email?.hasError('required')) {
-      return 'Email is required';
-    }
-    if (this.email?.hasError('email')) {
-      return 'Invalid email format';
-    }
-    if (this.password?.hasError('required')) {
-      return 'Password is required';
-    }
-    if (this.password?.hasError('minlength')) {
-      return 'Password must be at least 6 characters long';
-    }
-    return '';
-  }
+
 
   // Clean up resources when navigating away
   ngOnDestroy() {
