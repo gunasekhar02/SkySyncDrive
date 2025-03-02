@@ -5,24 +5,40 @@
       
         <table class="signup-full-width" cellspacing="0"><tr>
           <td><mat-form-field >
-            <input matInput placeholder="First name">
+            <input matInput placeholder="First name" [formControl]="firstName">
+            <mat-error *ngIf="firstName?.touched && firstName?.hasError('required')"> 
+              First Name is required 
+            </mat-error>
           </mat-form-field></td>
           <td><mat-form-field >
-            <input matInput placeholder="Last name">
+            <input matInput placeholder="Last name"  [formControl]="lastName">
+            <mat-error *ngIf="lastName?.touched && lastName?.hasError('required')"> 
+              Last Name is required 
+            </mat-error>
           </mat-form-field></td>
         </tr></table>
         <table class="signup-full-width" cellspacing="0"><tr>
             <mat-form-field>
                 <input matInput placeholder="Enter your email" [formControl]="email" required>
-                <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                <mat-error *ngIf="email?.touched && email?.invalid">
+                  {{ email.hasError('required') ? 'Email is required' : 'Invalid email format' }}
+                </mat-error>
               </mat-form-field>
           </tr>
           <tr><mat-form-field >
-            <input matInput placeholder="Set the password">
+            <input matInput placeholder="Set the password" [formControl]="password">
+            <mat-error *ngIf="password?.touched && password?.invalid">
+              {{ password.hasError('required') ? 'Password is required' : 'Password must be at least 6 characters long' }}
+            </mat-error>
           </mat-form-field></tr></table>
 
           <div class="navButtons">
-            <a mat-raised-button  routerLink="/home">Sign In</a>
+            <a mat-raised-button  (click)="onSignUp()" [disabled]="signUpForm.invalid || loading">
+              <div *ngIf="loading" class="loader-container">
+                <span class="loader"></span>
+              </div>
+              <span *ngIf="!loading">Sign up</span>
+            </a>
         </div>
           
       </form>
