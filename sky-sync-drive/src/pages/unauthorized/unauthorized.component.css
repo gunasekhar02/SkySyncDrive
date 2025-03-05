@@ -1,0 +1,9 @@
+.unauthorized {
+    text-align: center;
+    padding-top: 100px; 
+    padding-bottom: 100px;
+    margin-top: 5px;
+    background-color: white;
+    color: blackk;
+    height: 100%;
+  }
