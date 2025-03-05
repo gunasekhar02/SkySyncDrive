@@ -10,6 +10,8 @@ import { AudioDetailComponentComponent } from './detail-media-pages/audio-detail
 import { VideoDetailComponentComponent } from './detail-media-pages/video-detail-component/video-detail-component.component';
 import { MediaManagerComponent } from './media-manager/media-manager.component';
 import { FileUploadComponent } from './file-upload/file-upload.component';
+import { UnauthorizedComponent } from '../pages/unauthorized/unauthorized.component';
+import { AuthGuard } from '../auth.guard';
 
 export const routes: Routes = [
   {
@@ -19,7 +21,7 @@ export const routes: Routes = [
   },
   {
     path: 'welcome',
-    component: GreetComponent,
+    component: GreetComponent 
   },
   {
     path: 'login',
@@ -34,29 +36,33 @@ export const routes: Routes = [
     component: AboutComponent,
   },
   {
-    path: 'sd',
-    component: StoragePieChartComponent,
-  },
-  {
     path: 'home/media/images-detail',
-    component: ImagesDetailComponentComponent,
+    component: ImagesDetailComponentComponent,canActivate: [AuthGuard] 
   },
   {
     path: 'home/media/audios-detail',
-    component: AudioDetailComponentComponent,
+    component: AudioDetailComponentComponent,canActivate: [AuthGuard] 
   },
   {
     path: 'home/media/videos-detail',
-    component: VideoDetailComponentComponent,
+    component: VideoDetailComponentComponent,canActivate: [AuthGuard] 
   },
   {
     path: 'home',
     component: HomeComponent, // HomeComponent will act as the parent
     children: [
-      { path: 'storage', component: StoragePieChartComponent },
-      { path: 'media', component: MediaManagerComponent },
-      { path: 'upload-media', component: FileUploadComponent },
-      { path: '', redirectTo: 'storage', pathMatch: 'full' }, // Default child route
-    ],
-  }
+      { path: 'storage', component: StoragePieChartComponent,canActivate: [AuthGuard]  },
+      { path: 'media', component: MediaManagerComponent , canActivate: [AuthGuard] },
+      { path: 'upload-media', component: FileUploadComponent , canActivate: [AuthGuard] },
+      { path: '', redirectTo: 'storage', pathMatch: 'full'  }, // Default child route
+    ]
+  },
+  { 
+    path: 'unauthorized', component: UnauthorizedComponent 
+  },
+  { 
+    path: '**', redirectTo: '/unauthorized' 
+  }, // Fallback for invalid routes
+
+
 ];
